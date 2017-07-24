@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export $(egrep -v '^#' .env | xargs)
+docker exec -it $CONTAINER_NAME bash

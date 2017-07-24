@@ -13,17 +13,13 @@
 
 See [Create React App Docs](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md) for more info.
 
-## ⌨️ Commands
+## ⌨️ Scripts
+There's nothing preventing you from using docker commands directly, but here are few scripts for convenience.
 
-🚧 **IMPORTANT!!!**
+Simply type these into terminal:
 
-Run commands from Docker's interactive terminal like this:
-
-
-```sh
-$ docker exec -it <NAME> /bin/sh
-# npm install styled-components
-```
-_(Where `<NAME>` corresponds to whatever was defined in the `.env` file.)_
-
-This ensures that commands are run inside our sandboxed environment with access to specific dependencies such as Node/NPM versions. This guarantees a consistent experience across environments.
+- `script/deploy`
+- `script/setup`
+- `script/start`
+- `script/terminal`
+- `script/test`
