@@ -1,14 +1,13 @@
 version: '3'
 
 services:
-  app:
+  web:
     build: .
-    image: "${NAME}:${TAG}"
-    container_name: ${NAME}
+    container_name: ${CONTAINER_NAME}
+    image: "${IMAGE_NAME}:${IMAGE_VERSION:-latest}"
     working_dir: /app
-    command: bash -c "npm install && npm start"
-    volumes:
-      - ./app/:/app
-      - /app/node_modules
+    command: bash -c "npm install && npm run build && node server.js"
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
     ports:
-      - "${PORT}:3000"
+      - "${PORT:-3000}:3000"

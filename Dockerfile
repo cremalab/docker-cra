@@ -1,3 +1,4 @@
+# Grab Node image
 FROM node:6
 
 # Install NPM 5
@@ -9,4 +10,8 @@ RUN cd /temp && \
     cd ~ && \
     rm -rf /temp
 
-EXPOSE 3000
+# Add code
+COPY ./app/ /app
+WORKDIR /app
+
+CMD npm install && npm run build && node server.js
